@@ -32,6 +32,6 @@ const postSchema = new Schema<Post>({
   },
 });
 
-const PostMessageModel = model<Post>("PostMessage", postSchema);
+const PostMessage = model<Post>("PostMessage", postSchema);
 
-export default PostMessageModel;
+export default PostMessage;

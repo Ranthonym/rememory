@@ -10,7 +10,7 @@ type PostState = {
 
 type PostAction = {
   type: string;
-  post: Post;
+  payload: Post;
 };
 
 type DispatchType = (args: PostAction) => PostAction;

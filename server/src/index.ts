@@ -2,11 +2,19 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 
+import postRoutes from "./routes/posts";
+
+// const postRoutes = require("./routes/posts");
+
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+
+// Routes
+
+app.use("/posts", postRoutes);
 
 //mongodb atlas connect
 const CONNECTION_URL =

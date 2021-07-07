@@ -1,6 +1,7 @@
+import { RequestHandler, Request, Response } from "express";
 import PostMessage from "../models/postMessage";
 
-export const getPosts = async (req, res) => {
+export const getPosts: RequestHandler = async (req: Request, res: Response) => {
   try {
     const postMessages = await PostMessage.find();
 
@@ -12,7 +13,10 @@ export const getPosts = async (req, res) => {
   }
 };
 
-export const createPost = async (req, res) => {
+export const createPost: RequestHandler = async (
+  req: Request,
+  res: Response
+) => {
   const post = req.body;
 
   const newPost = new PostMessage(post);

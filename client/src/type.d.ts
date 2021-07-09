@@ -1,8 +1,18 @@
-// interface Post {
-//   id: number;
-//   title: string;
-//   body: string;
-// }
+interface Post {
+  title: string;
+  message: string;
+  creator: string;
+  tags: string[];
+  selectedfile: string;
+  likeCount: {
+    type: Number;
+    default: 0;
+  };
+  createdAt: {
+    type: Date;
+    default: Date;
+  };
+}
 
 // type PostState = {
 //   posts: Post[];

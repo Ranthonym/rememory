@@ -34,9 +34,9 @@ const Posts = () => {
           <Post post={post} />
         </Grid>
       ))}
-      {posts.map((post: any) => {
+      {/* {posts.map((post: any) => {
         console.log(post);
-      })}
+      })} */}
     </Grid>
   );
 };

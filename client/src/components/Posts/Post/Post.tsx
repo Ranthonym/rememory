@@ -9,8 +9,8 @@ import {
 } from "@material-ui/core";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import DeleteIcon from "@material-ui/icons/Delete";
-import MoreHorizonIcon from "@material-ui/icons/MoreHoriz";
-
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import moment from "moment";
 import useStyles from "./styles";
 
 const Post = ({ post }: any) => {
@@ -27,6 +27,38 @@ const Post = ({ post }: any) => {
         }
         title={post.title}
       />
+      <div className={classes.overlay}>
+        <Typography variant="h6">{post.author}</Typography>
+        <Typography variant="body2">
+          {moment(post.createdAt).fromNow()}
+        </Typography>
+      </div>
+      <div className={classes.overlay2}>
+        <Button style={{ color: "white" }} size="small">
+          <MoreHorizIcon fontSize="medium" />
+        </Button>
+      </div>
+      <div className={classes.details}>
+        <Typography variant="body2" color="textSecondary">
+          {post.tags.map((tag: string) => `#${tag} `)}
+        </Typography>
+      </div>
+      <CardContent>
+        <Typography className={classes.title} variant="h5" gutterBottom>
+          {post.message}
+        </Typography>
+      </CardContent>
+      <CardActions className={classes.cardActions}>
+        <Button size="small" color="primary">
+          <ThumbUpAltIcon fontSize="small" />
+          Like
+          {post.likeCount}
+        </Button>
+        <Button size="small" color="primary">
+          <DeleteIcon fontSize="small" />
+          Delete
+        </Button>
+      </CardActions>
     </Card>
   );
 };

@@ -18,7 +18,7 @@ app.use("/posts", postRoutes);
 
 //mongodb atlas connect
 const CONNECTION_URL =
-  "mongodb+srv://mernuser:123qwe@cluster0.pfldj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://mernuser:123qwe@cluster0.9vt7k.mongodb.net/rememoryretryWrites=true&w=majority";
 
 const PORT = process.env.PORT || 5000;
 

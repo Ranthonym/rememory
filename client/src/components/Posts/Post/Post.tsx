@@ -16,7 +16,7 @@ import useStyles from "./styles";
 const Post = ({ post }: any) => {
   const classes = useStyles();
 
-  console.log(post);
+  // console.log(post);
   return (
     <Card className={classes.card}>
       <CardMedia

@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import FileBase from "react-file-base64";
 import useStyles from "./styles";
-import { useDispatch } from "react-redux";
-import { createPost } from "../../actions/posts";
-
+import { useDispatch, useSelector } from "react-redux";
+import { createPost, updatePost } from "../../actions/posts";
 // type Props = {
 //   savePost: (post: Post | any) => void;
 // };
 
-const Form = () => {
+const Form = ({ currentId, setCurrentId }: any) => {
   const [postData, setPostData] = useState({
     author: "",
     title: "",
@@ -20,25 +19,35 @@ const Form = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  // const handlePostData = (e: any) => {
-  //   setPostData({
-  //     ...postData,
-  //     [e.currentTarget.id]: e.currentTarget.value,
-  //   });
-  // };
+  const post = useSelector((state: any) =>
+    currentId ? state.posts.find((post: any) => post._id === currentId) : null
+  );
 
-  // const createNewPost = (e: any) => {
-  //   e.preventDefault();
-  //   savePost(postData);
-  // };
+  useEffect(() => {
+    if (post) setPostData(post);
+  }, [post]);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
-    dispatch(createPost(postData));
+    if (currentId) {
+      dispatch(updatePost(currentId, postData));
+    } else {
+      dispatch(createPost(postData));
+    }
+    clear();
   };
 
-  const clear = () => {};
+  const clear = () => {
+    setCurrentId(null);
+    setPostData({
+      author: "",
+      title: "",
+      message: "",
+      tags: "",
+      selectedFile: "",
+    });
+  };
 
   return (
     <Paper className={classes.paper}>
@@ -48,7 +57,9 @@ const Form = () => {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">Creating a memory</Typography>
+        <Typography variant="h6">
+          {currentId ? `Editing` : `Creating`} a memory
+        </Typography>
         <TextField
           name="author"
           variant="outlined"

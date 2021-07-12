@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 //   };
 // }
 
-const Posts = () => {
+const Posts = ({ setCurrentId }: any) => {
   const posts = useSelector((state: any) => state.posts);
 
   // console.log(posts);
@@ -31,7 +31,7 @@ const Posts = () => {
     >
       {posts.map((post: any) => (
         <Grid key={posts._id} item xs={12} sm={6}>
-          <Post post={post} />
+          <Post post={post} setCurrentId={setCurrentId} />
         </Grid>
       ))}
       {/* {posts.map((post: any) => {

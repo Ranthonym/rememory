@@ -1,0 +1,2 @@
+-- right now, submitting a form creates a new post in the db but does not trigger a re-render to show new post. 
+But clicking on "update" triggers a re-render and fetches the any newly created post not shown yet

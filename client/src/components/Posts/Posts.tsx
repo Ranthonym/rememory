@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Post from "./Post/Post";
 import useStyles from "./styles";
 import { Grid, CircularProgress } from "@material-ui/core";
@@ -17,9 +17,9 @@ import { useSelector } from "react-redux";
 const Posts = ({ setCurrentId }: any) => {
   const posts = useSelector((state: any) => state.posts);
 
-  // useEffect(() => {
-
-  // }, [])
+  useEffect(() => {
+    console.log(posts);
+  }, [posts]);
 
   // console.log(posts);
 

@@ -8,7 +8,7 @@ import { createPost, updatePost } from "../../actions/posts";
 //   savePost: (post: Post | any) => void;
 // };
 
-const Form = ({ currentId, setCurrentId }: any) => {
+const Form = ({ currentId, setCurrentId, setNewPostCreated }: any) => {
   const [postData, setPostData] = useState({
     author: "",
     title: "",
@@ -19,18 +19,17 @@ const Form = ({ currentId, setCurrentId }: any) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  console.log(currentId);
-
   const post = useSelector((state: any) =>
     currentId ? state.posts.find((post: any) => post._id === currentId) : null
   );
 
   useEffect(() => {
     if (post) setPostData(post);
+    console.log(currentId);
   }, [post, dispatch]);
 
   const clear = () => {
-    setCurrentId(0);
+    setCurrentId(null);
     setPostData({
       author: "",
       title: "",
@@ -43,14 +42,17 @@ const Form = ({ currentId, setCurrentId }: any) => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
-    if (currentId === 0) {
-      dispatch(createPost(postData));
-      // console.log(typeof postData.tags);
-      clear();
-    } else {
+    if (currentId) {
       dispatch(updatePost(currentId, postData));
-      clear();
+      // console.log(typeof postData.tags);
+    } else {
+      dispatch(createPost(postData));
+      setNewPostCreated(true);
+      setTimeout(() => {
+        setNewPostCreated(false);
+      }, 1000);
     }
+    clear();
   };
 
   return (

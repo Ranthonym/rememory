@@ -10,13 +10,16 @@ import memories from "./images/memories.png";
 import useStyles from "./styles";
 
 const App = () => {
-  const [currentId, setCurrentId] = useState(0);
+  const [currentId, setCurrentId] = useState<any>(null);
+  const [newPostCreated, setNewPostCreated] = useState<any>(false);
   const dispatch = useDispatch();
   const classes = useStyles();
 
+  console.log(newPostCreated);
+
   useEffect(() => {
     dispatch(getPosts());
-  }, [currentId, dispatch]);
+  }, [currentId, newPostCreated, dispatch]);
 
   return (
     <Container maxWidth="lg">
@@ -38,7 +41,11 @@ const App = () => {
               <Posts setCurrentId={setCurrentId} />
             </Grid>
             <Grid item xs={12} sm={4}>
-              <Form currentId={currentId} setCurrentId={setCurrentId} />
+              <Form
+                currentId={currentId}
+                setCurrentId={setCurrentId}
+                setNewPostCreated={setNewPostCreated}
+              />
             </Grid>
           </Grid>
         </Container>

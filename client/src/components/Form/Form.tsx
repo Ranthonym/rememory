@@ -19,13 +19,15 @@ const Form = ({ currentId, setCurrentId }: any) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
+  console.log(currentId);
+
   const post = useSelector((state: any) =>
     currentId ? state.posts.find((post: any) => post._id === currentId) : null
   );
 
   useEffect(() => {
     if (post) setPostData(post);
-  }, [post]);
+  }, [post, dispatch]);
 
   const clear = () => {
     setCurrentId(0);

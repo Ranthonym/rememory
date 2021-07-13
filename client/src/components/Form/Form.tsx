@@ -27,19 +27,8 @@ const Form = ({ currentId, setCurrentId }: any) => {
     if (post) setPostData(post);
   }, [post]);
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-
-    if (currentId) {
-      dispatch(updatePost(currentId, postData));
-    } else {
-      dispatch(createPost(postData));
-    }
-    clear();
-  };
-
   const clear = () => {
-    setCurrentId(null);
+    setCurrentId(0);
     setPostData({
       author: "",
       title: "",
@@ -47,6 +36,18 @@ const Form = ({ currentId, setCurrentId }: any) => {
       tags: "",
       selectedFile: "",
     });
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    if (currentId === 0) {
+      dispatch(createPost(postData));
+      clear();
+    } else {
+      dispatch(updatePost(currentId, postData));
+      clear();
+    }
   };
 
   return (

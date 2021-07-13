@@ -17,6 +17,10 @@ import { useSelector } from "react-redux";
 const Posts = ({ setCurrentId }: any) => {
   const posts = useSelector((state: any) => state.posts);
 
+  // useEffect(() => {
+
+  // }, [])
+
   // console.log(posts);
 
   const classes = useStyles();

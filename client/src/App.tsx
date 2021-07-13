@@ -13,11 +13,12 @@ const App = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const [currentId, setCurrentid] = useState<any>(null);
+  const [currentId, setCurrentid] = useState<any>(0);
 
   useEffect(() => {
     dispatch(getPosts());
-  }, [dispatch]);
+    console.log(`rerender happened due to ${currentId}`);
+  }, [currentId, dispatch]);
 
   return (
     <Container maxWidth="lg">

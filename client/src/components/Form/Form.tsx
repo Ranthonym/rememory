@@ -13,7 +13,7 @@ const Form = ({ currentId, setCurrentId }: any) => {
     author: "",
     title: "",
     message: "",
-    tags: "",
+    tags: "" as string | string[],
     selectedFile: "",
   });
   const classes = useStyles();
@@ -33,7 +33,7 @@ const Form = ({ currentId, setCurrentId }: any) => {
       author: "",
       title: "",
       message: "",
-      tags: "",
+      tags: "" as string | string[],
       selectedFile: "",
     });
   };
@@ -43,6 +43,7 @@ const Form = ({ currentId, setCurrentId }: any) => {
 
     if (currentId === 0) {
       dispatch(createPost(postData));
+      // console.log(typeof postData.tags);
       clear();
     } else {
       dispatch(updatePost(currentId, postData));
@@ -93,7 +94,9 @@ const Form = ({ currentId, setCurrentId }: any) => {
           label="Tags"
           fullWidth
           value={postData.tags}
-          onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
+          onChange={(e) =>
+            setPostData({ ...postData, tags: e.target.value.split(",") })
+          }
         />
         <div className={classes.fileInput}>
           <FileBase

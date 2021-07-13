@@ -55,7 +55,7 @@ const Post = ({ post, setCurrentId }: any) => {
         {post.title}
       </Typography>
       <CardContent>
-        <Typography className={classes.title} variant="h5" gutterBottom>
+        <Typography variant="body2" color="textSecondary" component="p">
           {post.message}
         </Typography>
       </CardContent>
@@ -71,7 +71,10 @@ const Post = ({ post, setCurrentId }: any) => {
         <Button
           size="small"
           color="primary"
-          onClick={() => dispatch(deletePost(post._id))}
+          onClick={() => {
+            dispatch(deletePost(post._id));
+            setCurrentId(null);
+          }}
         >
           <DeleteIcon fontSize="small" />
           Delete

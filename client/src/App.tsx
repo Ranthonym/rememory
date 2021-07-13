@@ -10,21 +10,19 @@ import memories from "./images/memories.png";
 import useStyles from "./styles";
 
 const App = () => {
-  const classes = useStyles();
+  const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
-
-  const [currentId, setCurrentId] = useState<any>(0);
+  const classes = useStyles();
 
   useEffect(() => {
     dispatch(getPosts());
-    console.log(`rerender due to ${currentId}`);
-  }, [dispatch, currentId]);
+  }, [currentId, dispatch]);
 
   return (
     <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
         <Typography className={classes.heading} variant="h2" align="center">
-          Memories
+          Rememory
         </Typography>
         <img className={classes.image} src={memories} alt="icon" height="60" />
       </AppBar>

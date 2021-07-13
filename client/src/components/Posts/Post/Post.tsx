@@ -73,8 +73,8 @@ const Post = ({ post, setCurrentId }: any) => {
           size="small"
           color="primary"
           onClick={() => {
-            // setCurrentId(0);
             dispatch(deletePost(post._id));
+            setCurrentId(post._id);
             console.log(post._id);
           }}
         >

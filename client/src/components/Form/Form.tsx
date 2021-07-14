@@ -17,7 +17,7 @@ const Form = ({ currentId, setCurrentId }: any) => {
   const dispatch = useDispatch();
 
   const post = useSelector((state: any) =>
-    currentId ? state.posts.find((post: any) => post._id === currentId) : null
+    currentId ? state.posts.find((p: any) => p._id === currentId) : null
   );
 
   useEffect(() => {
@@ -40,7 +40,6 @@ const Form = ({ currentId, setCurrentId }: any) => {
 
     if (currentId) {
       dispatch(updatePost(currentId, postData));
-      // console.log(typeof postData.tags);
     } else {
       dispatch(createPost(postData));
     }

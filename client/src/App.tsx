@@ -15,7 +15,9 @@ const App = () => {
   const classes = useStyles();
 
   useEffect(() => {
-    dispatch(getPosts());
+    setTimeout(() => {
+      dispatch(getPosts());
+    }, 100);
   }, [currentId, dispatch]);
 
   return (

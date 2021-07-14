@@ -20,7 +20,6 @@ const Post = ({ post, setCurrentId }: any) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  // console.log(post.tags);
   return (
     <Card className={classes.card}>
       <CardMedia

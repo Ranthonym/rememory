@@ -74,8 +74,6 @@ const Post = ({ post, setCurrentId }: any) => {
           color="primary"
           onClick={() => {
             dispatch(deletePost(post._id));
-            setCurrentId(post._id);
-            // console.log(post._id);
           }}
         >
           <DeleteIcon fontSize="small" />

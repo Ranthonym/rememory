@@ -4,24 +4,8 @@ import useStyles from "./styles";
 import { Grid, CircularProgress } from "@material-ui/core";
 import { useSelector } from "react-redux";
 
-// interface Props {
-//   post: {
-//     title: string;
-//     message: string;
-//     creator: string;
-//     tags: string[];
-//     selectedfile: string;
-//   };
-// }
-
 const Posts = ({ setCurrentId }: any) => {
   const posts = useSelector((state: any) => state.posts);
-
-  // useEffect(() => {
-  //   console.log(posts);
-  // }, [posts]);
-
-  // console.log(posts);
 
   const classes = useStyles();
   return !posts.length ? (
@@ -38,9 +22,6 @@ const Posts = ({ setCurrentId }: any) => {
           <Post post={post} setCurrentId={setCurrentId} />
         </Grid>
       ))}
-      {/* {posts.map((post: any) => {
-        console.log(post);
-      })} */}
     </Grid>
   );
 };

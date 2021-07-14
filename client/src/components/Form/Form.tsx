@@ -4,11 +4,8 @@ import FileBase from "react-file-base64";
 import useStyles from "./styles";
 import { useDispatch, useSelector } from "react-redux";
 import { createPost, updatePost } from "../../actions/posts";
-// type Props = {
-//   savePost: (post: Post | any) => void;
-// };
 
-const Form = ({ currentId, setCurrentId, setNewPostCreated }: any) => {
+const Form = ({ currentId, setCurrentId }: any) => {
   const [postData, setPostData] = useState({
     author: "",
     title: "",
@@ -25,7 +22,6 @@ const Form = ({ currentId, setCurrentId, setNewPostCreated }: any) => {
 
   useEffect(() => {
     if (post) setPostData(post);
-    console.log(currentId);
   }, [post, dispatch]);
 
   const clear = () => {
@@ -47,10 +43,6 @@ const Form = ({ currentId, setCurrentId, setNewPostCreated }: any) => {
       // console.log(typeof postData.tags);
     } else {
       dispatch(createPost(postData));
-      setNewPostCreated(true);
-      setTimeout(() => {
-        setNewPostCreated(false);
-      }, 1000);
     }
     clear();
   };

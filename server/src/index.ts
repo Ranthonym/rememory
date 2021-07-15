@@ -16,7 +16,7 @@ app.use(cors());
 
 app.use("/posts", postRoutes);
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.send("Hello Rememory API");
 });
 

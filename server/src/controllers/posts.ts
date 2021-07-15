@@ -3,7 +3,7 @@ const mongoose = require("mongoose"); // this somehow fixed the mongoose module 
 // import { RequestHandler, Request, Response } from "express";
 import PostMessage from "../models/postMessage";
 
-export const getPosts = async (req: any, res: any) => {
+export const getPosts = async (_req: any, res: any) => {
   try {
     const postMessages = await PostMessage.find();
 

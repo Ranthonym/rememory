@@ -6,8 +6,16 @@ The app allows a user to add new, edit and delete card posts of their favorite n
 
 ### WIP features
 
--- User authentication
--- Sharing posts on social media
+- User authentication
+- Sharing posts on social media
+
+## Tech stack
+
+React
+Typerscript
+Express
+Node
+MongoDB
 
 ## Screenshots
 

@@ -1,5 +1,6 @@
 server/dist/
 node_modules/
+Tasks&Bugs
 
 /.pnp
 .pnp.js

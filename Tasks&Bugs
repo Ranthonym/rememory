@@ -1,4 +1,4 @@
 -- right now, submitting a form creates a new post in the db but does not trigger a re-render to show new post. 
 But clicking on "update" triggers a re-render and fetches the any newly created post not shown yet (FIXED)
 
--- clicking on delete post works fine but fills out the form with post details and enters "edit mode" for an already deleted post.
+-- clicking on delete post works fine but fills out the form with post details and enters "edit mode" for an already deleted post. (fixed)

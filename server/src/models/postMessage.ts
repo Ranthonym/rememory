@@ -1,5 +1,6 @@
 import { Schema, model } from "mongoose";
 
+// typescript definitions for possible future refactoring
 // interface Post {
 //   title: string;
 //   message: string;

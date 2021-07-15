@@ -11,11 +11,11 @@ The app allows a user to add new, edit and delete card posts of their favorite n
 
 ## Tech stack
 
-React
-Typerscript
-Express
-Node
-MongoDB
+- React
+- Typerscript
+- Express
+- Node
+- MongoDB
 
 ## Screenshots
 

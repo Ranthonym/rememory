@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
+import { Container, Grow, Grid } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 
 import Form from "./components/Form/Form";
 import Posts from "./components/Posts/Posts";
+import { NavBar } from "./components/NavBar/NavBar";
 import { getPosts } from "../src/actions/posts";
 
-import memories from "./images/memories.png";
 import useStyles from "./styles";
 
 const App = () => {
@@ -22,12 +22,7 @@ const App = () => {
 
   return (
     <Container maxWidth="lg">
-      <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography className={classes.heading} variant="h2" align="center">
-          Rememory
-        </Typography>
-        <img className={classes.image} src={memories} alt="icon" height="60" />
-      </AppBar>
+      <NavBar />
       <Grow in>
         <Container>
           <Grid

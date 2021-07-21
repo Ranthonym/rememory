@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Typography } from "@material-ui/core";
+import { AppBar, Typography, Toolbar, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 import useStyles from "./styles";
@@ -9,7 +9,7 @@ import memories from "../../images/memories.png";
 export const NavBar = () => {
   const classes = useStyles();
 
-  const user = null;
+  const user = null as any;
 
   return (
     <div>
@@ -31,6 +31,42 @@ export const NavBar = () => {
             height="60"
           />
         </div>
+        {/* <Toolbar className={classes.toolbar}>
+          {user ? (
+            <div className={classes.profile}>
+              <Avatar
+                className={classes.purple}
+                alt={user.result.name}
+                src={user.result.imageURL}
+              >
+                {user.result.name.charAt(0)}
+              </Avatar>
+              <Typography
+                className={classes.userName}
+                variant="h6"
+                align="center"
+              >
+                {user.result.name}
+              </Typography>
+              <Button
+                variant="contained"
+                className={classes.logout}
+                color="secondary"
+              >
+                Logout
+              </Button>
+            </div>
+          ) : (
+            <Button
+              component={Link}
+              to="/auth"
+              variant="contained"
+              color="primasry"
+            >
+              Sign In
+            </Button>
+          )}
+        </Toolbar> */}
       </AppBar>
     </div>
   );

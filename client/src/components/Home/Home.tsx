@@ -6,6 +6,8 @@ import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
 import { getPosts } from "../../actions/posts";
 
+// import useStyles from "../../styles";
+
 export const Home = () => {
   const [currentId, setCurrentId] = useState<any>(null);
   const dispatch = useDispatch();

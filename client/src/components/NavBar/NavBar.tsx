@@ -31,16 +31,16 @@ export const NavBar = () => {
             height="60"
           />
         </div>
-        {/* <Toolbar className={classes.toolbar}>
+        <Toolbar className={classes.toolbar}>
           {user ? (
             <div className={classes.profile}>
-              <Avatar
+              {/* <Avatar
                 className={classes.purple}
                 alt={user.result.name}
                 src={user.result.imageURL}
               >
                 {user.result.name.charAt(0)}
-              </Avatar>
+              </Avatar> */}
               <Typography
                 className={classes.userName}
                 variant="h6"
@@ -50,7 +50,7 @@ export const NavBar = () => {
               </Typography>
               <Button
                 variant="contained"
-                className={classes.logout}
+                // className={classes.logout}
                 color="secondary"
               >
                 Logout
@@ -61,12 +61,12 @@ export const NavBar = () => {
               component={Link}
               to="/auth"
               variant="contained"
-              color="primasry"
+              color="primary"
             >
               Sign In
             </Button>
           )}
-        </Toolbar> */}
+        </Toolbar>
       </AppBar>
     </div>
   );

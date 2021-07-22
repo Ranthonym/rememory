@@ -6,7 +6,7 @@ import { NavBar } from "./components/NavBar/NavBar";
 import { Home } from "./components/Home/Home";
 import Auth from "./components/Auth/Auth";
 
-import useStyles from "./styles";
+// import useStyles from "./styles";
 
 const App = () => (
   <BrowserRouter>

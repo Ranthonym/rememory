@@ -16,11 +16,22 @@ import { useHistory } from "react-router-dom";
 import useStyles from "./styles";
 import { Input } from "./Input";
 // import Icon from "./icon";
+import { signin, signup } from "../../actions/auth";
+
+const initialState: any = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
 
 const Auth = () => {
   const classes = useStyles();
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
+  const [formData, setFormData] = useState(initialState);
+
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -32,9 +43,20 @@ const Auth = () => {
     setShowPassword(false);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    // console.log(formData);
 
-  const handleChange = () => {};
+    if (isSignUp) {
+      dispatch(signup(formData, history));
+    } else {
+      dispatch(signin(formData, history));
+    }
+  };
+
+  const handleChange = (e: any) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const googleSuccess = async (res: any) => {
     const result = res?.profileObj;

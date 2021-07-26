@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import postRoutes from "./routes/posts";
+import userRoutes from "./routes/users";
 
 const app = express();
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(cors());
 // Routes
 
 app.use("/posts", postRoutes);
+app.use("/user", userRoutes);
 
 app.get("/", (_req, res) => {
   res.send("Hello Rememory API");

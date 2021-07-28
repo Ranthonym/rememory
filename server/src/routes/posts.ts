@@ -7,7 +7,7 @@ import {
   likePost,
 } from "../controllers/posts";
 
-import auth from "src/middleware/auth";
+import auth from "../middleware/auth";
 
 const router = express.Router();
 

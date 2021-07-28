@@ -90,7 +90,7 @@ const Auth = () => {
                     name="firstName"
                     label="First Name"
                     half
-                    // handleChange={handleChange}
+                    handleChange={handleChange}
                     autoFocus
                   />
 
@@ -98,7 +98,7 @@ const Auth = () => {
                     name="lastName"
                     label="Last Name"
                     half
-                    // handleChange={handleChange}
+                    handleChange={handleChange}
                   />
                 </>
               )}

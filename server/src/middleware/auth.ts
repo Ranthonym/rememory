@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-const auth = async (req: any, res: any, next: any) => {
+const auth = async (req: any, _res: any, next: any) => {
   try {
     // get user token from frontend
     const token = req.headers.authorization.split(" ")[1];

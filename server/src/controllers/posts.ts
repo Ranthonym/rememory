@@ -18,7 +18,11 @@ export const getPosts = async (_req: any, res: any) => {
 export const createPost = async (req: any, res: any) => {
   const post = req.body;
 
-  const newPost = new PostMessage(post);
+  const newPost = new PostMessage({
+    ...post,
+    author: req.userId,
+    createdAt: new Date().toISOString(),
+  });
 
   try {
     await newPost.save();
@@ -62,16 +66,27 @@ export const deletePost = async (req: any, res: any) => {
 export const likePost = async (req: any, res: any) => {
   const { id: _id } = req.params;
 
+  // use new req property created by middleware
+  if (!req.userId) return res.json({ message: "Unauthorized" });
+
   if (!mongoose.Types.ObjectId.isValid(_id))
     return res.status(404).send("No post matches requested id");
 
   const post = await PostMessage.findById(_id);
 
-  const updatedPost = await PostMessage.findByIdAndUpdate(
-    _id,
-    { likeCount: post.likeCount + 1 },
-    { new: true }
-  );
+  const index = post.likes.findIndex((id: any) => id === String(req.userId));
+
+  if (index === -1) {
+    // like post
+    post.likes.push(req.userId);
+  } else {
+    //dislike post
+    post.likes = post.likes.filter((id: any) => id !== String(req.userId));
+  }
+
+  const updatedPost = await PostMessage.findByIdAndUpdate(_id, post, {
+    new: true,
+  });
 
   res.json(updatedPost);
 };

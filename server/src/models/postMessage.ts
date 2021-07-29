@@ -20,12 +20,13 @@ import { Schema, model } from "mongoose";
 const postSchema = new Schema({
   title: String,
   message: String,
+  name: String,
   author: String,
   tags: [String],
   selectedFile: String,
-  likeCount: {
-    type: Number,
-    default: 0,
+  likes: {
+    type: [String],
+    default: [],
   },
   createdAt: {
     type: Date,

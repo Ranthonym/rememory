@@ -1,13 +1,15 @@
 # Rememory
 
-Rememory is a simple, responsive, full stack SPA built using React and Typescript on the front-end, and Node and MongoDB on the back-end. The client is deployed on Github Pages and the server API is deployed on Heroku.
+Rememory is a simple, responsive, full stack app built in TypeScript using React on the front-end, and Node and MongoDB on the back-end. User Authentication is enabled by JWT custom auth and Google OAuth.
 
-The app allows a user to add new, edit and delete card posts of their favorite nostalgic recollections - a vacation, a sports game, a dinner etc.
+The client is deployed on Github Pages and the server API is deployed on Heroku.
+
+The app allows an authenticated user to add new, edit and delete card posts of their favorite nostalgic recollections - a vacation, a sports game, a dinner etc. as well as like posts made by others in the community.
 
 ### WIP features
 
-- User authentication
-- Sharing posts on social media
+- Search posts by author, tags,
+- Paginated scroll for posts
 
 ## Tech stack
 
@@ -16,6 +18,11 @@ The app allows a user to add new, edit and delete card posts of their favorite n
 - Express
 - Node
 - MongoDB
+
+## Platforms
+
+- GitHub Pages (Client)
+- Heroku (Server)
 
 ## Screenshots
 

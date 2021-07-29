@@ -9,7 +9,7 @@ API.interceptors.request.use((req: any) => {
   if (localStorage.getItem("profile")) {
     // fixing null type error
     let localProfile = localStorage.getItem("profile") as string;
-    req.headers.Authorization = `Bearer ${JSON.parse(localProfile).token}`;
+    req.headers.authorization = `Bearer ${JSON.parse(localProfile).token}`;
   }
 
   return req;

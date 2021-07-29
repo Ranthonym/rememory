@@ -20,6 +20,7 @@ import { Schema, model } from "mongoose";
 const postSchema = new Schema({
   title: String,
   message: String,
+  name: String,
   author: String,
   tags: [String],
   selectedFile: String,

@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 import {
   FETCH_ALL,
+  FETCH_BY_SEARCH,
   UPDATE_POST,
   CREATE_POST,
   DELETE_POST,
@@ -9,6 +10,8 @@ import {
 export default (posts = [] as any[], action: any) => {
   switch (action.type) {
     case FETCH_ALL:
+      return action.payload;
+    case FETCH_BY_SEARCH:
       return action.payload;
     case CREATE_POST:
       return [...posts, action.payload];

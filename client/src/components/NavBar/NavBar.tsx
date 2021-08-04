@@ -51,7 +51,12 @@ export const NavBar = () => {
           >
             Rememory
           </Typography>
-          <img className={classes.image} src={rewind} alt="icon" height="60" />
+          <img
+            className={classes.image}
+            src={rewind}
+            alt="icon"
+            height="45px"
+          />
         </div>
         <Toolbar className={classes.toolbar}>
           {user ? (

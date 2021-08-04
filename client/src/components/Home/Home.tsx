@@ -15,7 +15,7 @@ import ChipInput from "material-ui-chip-input";
 import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
 import Pagination from "../Pagination";
-import { getPosts } from "../../actions/posts";
+import { getPosts, getPostsBySearch } from "../../actions/posts";
 
 import useStyles from "./styles";
 
@@ -43,7 +43,7 @@ export const Home = () => {
 
   const searchPost = () => {
     if (search.trim()) {
-      // dispatch --> fetch searched posts
+      dispatch(getPostsBySearch({ search, tags: tags.join(",") }));
     } else {
       history.push("./");
     }

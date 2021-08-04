@@ -32,11 +32,33 @@ export const Home = () => {
   const searchQuery = query.get("searchQuery");
   const classes = useStyles();
 
+  const [search, setSearch] = useState("") as any;
+  const [tags, setTags] = useState([]) as any;
+
   useEffect(() => {
     setTimeout(() => {
       dispatch(getPosts());
     }, 100);
   }, [currentId, dispatch]);
+
+  const searchPost = () => {
+    if (search.trim()) {
+      // dispatch --> fetch searched posts
+    } else {
+      history.push("./");
+    }
+  };
+
+  const handleKeyPress = (e: any) => {
+    if (e.keyCode === 13) {
+      searchPost();
+    }
+  };
+
+  const handleAdd = (tag: any) => setTags([...tags, tag]);
+
+  const handleDelete = (tagToDelete: any) =>
+    setTags(tags.filter((tag: any) => tag !== tagToDelete));
 
   return (
     <Grow in>
@@ -62,9 +84,26 @@ export const Home = () => {
                 variant="outlined"
                 label="Search Posts"
                 fullWidth
-                value="TEST"
-                onChange={() => {}}
+                value={search}
+                onChange={(e: any) => setSearch(e.target.value)}
+                onKeyPress={handleKeyPress}
               />
+              <ChipInput
+                style={{ margin: "10px 0" }}
+                value={tags}
+                label="search tags"
+                variant="outlined"
+                onAdd={handleAdd}
+                onDelete={handleDelete}
+              />
+              <Button
+                onClick={searchPost}
+                // className={classes.searchButton}
+                variant="contained"
+                color="primary"
+              >
+                Search
+              </Button>
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
             <Paper elevation={6}>

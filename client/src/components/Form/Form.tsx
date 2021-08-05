@@ -19,7 +19,7 @@ const Form = ({ currentId, setCurrentId }: any) => {
   const user = JSON.parse(localUserProfile);
 
   const post = useSelector((state: any) =>
-    currentId ? state.posts.find((p: any) => p._id === currentId) : null
+    currentId ? state.posts.posts.find((p: any) => p._id === currentId) : null
   );
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const Form = ({ currentId, setCurrentId }: any) => {
 
   if (!user?.result?.name) {
     return (
-      <Paper className={classes.paper}>
+      <Paper className={classes.paper} elevation={6}>
         <Typography variant="h6" align="center">
           Sign In to create your own Rememory post.
         </Typography>

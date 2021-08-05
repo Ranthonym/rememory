@@ -35,11 +35,11 @@ export const Home = () => {
   const [search, setSearch] = useState("") as any;
   const [tags, setTags] = useState([]) as any;
 
-  useEffect(() => {
-    setTimeout(() => {
-      dispatch(getPosts());
-    }, 100);
-  }, [currentId, dispatch]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     dispatch(getPosts());
+  //   }, 100);
+  // }, [currentId, dispatch]);
 
   const searchPost = () => {
     if (search.trim() || tags) {
@@ -110,7 +110,7 @@ export const Home = () => {
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
             <Paper elevation={6}>
-              <Pagination />
+              <Pagination page={page} />
             </Paper>
           </Grid>
         </Grid>

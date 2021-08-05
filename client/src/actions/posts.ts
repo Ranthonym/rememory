@@ -8,9 +8,11 @@ import {
 import * as api from "../api";
 
 //Action Creators
-export const getPosts = () => async (dispatch: any) => {
+export const getPosts = (page: any) => async (dispatch: any) => {
   try {
-    const { data } = await api.fetchPosts();
+    const { data } = await api.fetchPosts(page);
+
+    console.log(data);
 
     dispatch({ type: FETCH_ALL, payload: data });
   } catch (error) {

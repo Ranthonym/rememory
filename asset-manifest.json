@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/rememory/static/css/main.d1e8e992.chunk.css",
-    "main.js": "/rememory/static/js/main.680a778e.chunk.js",
-    "main.js.map": "/rememory/static/js/main.680a778e.chunk.js.map",
+    "main.css": "/rememory/static/css/main.75ede3f5.chunk.css",
+    "main.js": "/rememory/static/js/main.a4b464e0.chunk.js",
+    "main.js.map": "/rememory/static/js/main.a4b464e0.chunk.js.map",
     "runtime-main.js": "/rememory/static/js/runtime-main.c68244e5.js",
     "runtime-main.js.map": "/rememory/static/js/runtime-main.c68244e5.js.map",
-    "static/js/2.0518e09b.chunk.js": "/rememory/static/js/2.0518e09b.chunk.js",
-    "static/js/2.0518e09b.chunk.js.map": "/rememory/static/js/2.0518e09b.chunk.js.map",
+    "static/js/2.a0f6200c.chunk.js": "/rememory/static/js/2.a0f6200c.chunk.js",
+    "static/js/2.a0f6200c.chunk.js.map": "/rememory/static/js/2.a0f6200c.chunk.js.map",
     "index.html": "/rememory/index.html",
-    "static/css/main.d1e8e992.chunk.css.map": "/rememory/static/css/main.d1e8e992.chunk.css.map",
-    "static/js/2.0518e09b.chunk.js.LICENSE.txt": "/rememory/static/js/2.0518e09b.chunk.js.LICENSE.txt",
-    "static/media/memories.9cfa8a46.png": "/rememory/static/media/memories.9cfa8a46.png"
+    "static/css/main.75ede3f5.chunk.css.map": "/rememory/static/css/main.75ede3f5.chunk.css.map",
+    "static/js/2.a0f6200c.chunk.js.LICENSE.txt": "/rememory/static/js/2.a0f6200c.chunk.js.LICENSE.txt",
+    "static/media/rewind.f2b298ad.png": "/rememory/static/media/rewind.f2b298ad.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c68244e5.js",
-    "static/js/2.0518e09b.chunk.js",
-    "static/css/main.d1e8e992.chunk.css",
-    "static/js/main.680a778e.chunk.js"
+    "static/js/2.a0f6200c.chunk.js",
+    "static/css/main.75ede3f5.chunk.css",
+    "static/js/main.a4b464e0.chunk.js"
   ]
 }

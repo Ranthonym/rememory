@@ -3,7 +3,9 @@ import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import FileBase from "react-file-base64";
 import useStyles from "./styles";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { createPost, updatePost } from "../../actions/posts";
+import history from "material-ui/svg-icons/action/history";
 
 const Form = ({ currentId, setCurrentId }: any) => {
   const [postData, setPostData] = useState({
@@ -14,6 +16,7 @@ const Form = ({ currentId, setCurrentId }: any) => {
   });
   const classes = useStyles();
   const dispatch = useDispatch();
+  const history = useHistory();
 
   let localUserProfile = localStorage.getItem("profile") as string;
   const user = JSON.parse(localUserProfile);
@@ -44,7 +47,7 @@ const Form = ({ currentId, setCurrentId }: any) => {
         updatePost(currentId, { ...postData, name: user?.result?.name })
       );
     } else {
-      dispatch(createPost({ ...postData, name: user?.result?.name }));
+      dispatch(createPost({ ...postData, name: user?.result?.name }, history));
     }
     clear();
   };

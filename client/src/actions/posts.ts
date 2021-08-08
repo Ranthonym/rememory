@@ -55,18 +55,22 @@ export const getPostsBySearch = (searchQuery: any) => async (dispatch: any) => {
   }
 };
 
-export const createPost = (post: any) => async (dispatch: any) => {
-  try {
-    dispatch({ type: START_LOADING });
+export const createPost =
+  (post: any, history: any) => async (dispatch: any) => {
+    try {
+      dispatch({ type: START_LOADING });
 
-    const { data } = await api.createPost(post);
+      const { data } = await api.createPost(post);
 
-    dispatch({ type: CREATE_POST, payload: data });
-    dispatch({ type: END_LOADING });
-  } catch (error) {
-    console.log(error);
-  }
-};
+      // got to newly created post
+      history.push(`/posts/${data._id}`);
+
+      dispatch({ type: CREATE_POST, payload: data });
+      dispatch({ type: END_LOADING });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 export const updatePost = (id: any, post: any) => async (dispatch: any) => {
   try {

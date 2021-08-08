@@ -6,7 +6,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import decode from "jwt-decode";
 import useStyles from "./styles";
 
-import memories from "../../images/memories.png";
+import rewind from "../../images/rewind.png";
 
 export const NavBar = () => {
   const classes = useStyles();
@@ -53,9 +53,9 @@ export const NavBar = () => {
           </Typography>
           <img
             className={classes.image}
-            src={memories}
+            src={rewind}
             alt="icon"
-            height="60"
+            height="45px"
           />
         </div>
         <Toolbar className={classes.toolbar}>
